@@ -1,3 +1,16 @@
+:root {
+  --lili: #C0A3CE;
+  --dark-lili: #9890D9;
+  --light-blue: #ACBEEA;
+  --pink: #CA86A4;
+  --peach: #E68F83;
+  --tan: #DDC09E;
+  --background: #DECEDE;
+  --teal:#638EA6;
+
+
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +18,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+  padding: 2vmin;
+  height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#root {
+  height: 100%;
+}
+
+.navigation {
+  background-color: var(--lili);
 }

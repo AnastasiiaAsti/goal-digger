@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 export default function LoginForm({ setUser }) {
   const [credentials, setCredentials] = useState({
@@ -28,17 +30,36 @@ export default function LoginForm({ setUser }) {
   }
 
   return (
-    <div>
-      <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
-        </form>
-      </div>
-      <p className="error-message">&nbsp;{error}</p>
+    <div className="container">
+      <Form autoComplete="off" onSubmit={handleSubmit}>
+        <h3>Log In</h3>
+        <div className="mb-3">
+            <label>Email</label>
+          <input
+            type="text"
+            name="email"
+            className="form-control"
+            placeholder="Enter email"
+            value={credentials.email}
+            onChange={handleChange}
+            required />
+          </div>
+        <div className="mb-3">
+            <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            className="form-control"
+            placeholder="Enter password"
+            value={credentials.password}
+            onChange={handleChange}
+            required />
+            <Button
+              type="submit"
+              className="btn">LOG IN</Button>
+          </div>
+        <p className="error-message">&nbsp;{error}</p>
+      </Form>
     </div>
   );
 }

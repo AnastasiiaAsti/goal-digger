@@ -9,12 +9,14 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav>
-      ]<span>Welcome, {user.name}</span>
-      &nbsp; | &nbsp;
-      <Link to="" onClick={handleLogOut}>
-        Log Out
-      </Link>
+    <nav className="navbar navbar-expand-lg navbar-light fixed-top navigation">
+      <div className="container">
+        <span>Welcome, {user.name}</span>
+        &nbsp; | &nbsp;
+        <Link to="" onClick={handleLogOut}>
+          Log Out
+        </Link>
+      </div>
     </nav>
   );
 }
