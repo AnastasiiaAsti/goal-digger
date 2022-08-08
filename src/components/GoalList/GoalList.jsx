@@ -1,17 +1,6 @@
-import GoalListItem from '../GoalListItem/GoalListItem';
-
-export default function GoalList({list}) {
-    const goalListItems = list.map(l =>
-        <GoalListItem
-            list={l}
-            key={l._id}
-        />
-    );
+export default function GoalList() {
     return (
-        <div className="container">
-            <ul>
-                <li>{goalListItems}</li>
-            </ul>
-        </div>
-    );
+        <main className="OrderList">
+    </main>
+    )
 }

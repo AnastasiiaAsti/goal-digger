@@ -17,7 +17,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path="/lists" element={<GoalListPage user={user} setUser={setUser} />} />
-            <Route path="/lists/new" element={<AddToListPage />} />
+            <Route path="/lists/new" element={<AddToListPage user={user} setUser={setUser}/>} />
           </Routes>
         </>
       ) :
