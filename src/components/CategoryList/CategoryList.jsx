@@ -1,7 +1,7 @@
-export default function CategoryList({ categories }) {
+export default function CategoryList({}) {
     return (
         <ul className="CategoryList">
-            <li>CategoryList</li>
+            <li>Categories </li>
         </ul>
     )
 }

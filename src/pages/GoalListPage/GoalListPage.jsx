@@ -18,15 +18,19 @@ export default function GoalListPage({ user, setUser }) {
 }, []);
 
     return (
-        <main className='GoalListPage'>
-            <h1 className="m-5">Goal List Page</h1>
-            <aside>
-                <Link to="/lists/new" className="btn btn-lg">Go Dig New Goals!</Link>
-            </aside>
-            <GoalList
-                lists={lists}
-                selectedList={selectedList}
-                setSelectedList={setSelectedList}/>
-        </main>
+
+
+        <div className="container">
+            <div className="row">
+                <div className="col-12 d-flex justify-content-between mt-5">
+                    <div className="sec2 col-3 rounded"><Link to="/lists/new" className="btn btn-lg ">Go Dig New Goals!</Link></div>
+                    <div className="sec1 col-8 rounded">
+                        <GoalList
+                            lists={lists}
+                            selectedList={selectedList}
+                            setSelectedList={setSelectedList} /></div>
+                </div>
+            </div>
+        </div>
     );
 }

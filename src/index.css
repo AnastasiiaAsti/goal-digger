@@ -38,3 +38,16 @@ code {
 .form {
   background-color: var(--lili);
 }
+
+.sec1 {
+  background-color: var(--light-blue);
+  height: 80vh;
+}
+
+.sec2 {
+  background-color: var(--peach);
+}
+
+.sec3 {
+  background-color: var(--teal);
+}

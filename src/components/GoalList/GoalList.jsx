@@ -1,15 +1,7 @@
-import GoalListItem from '../GoalListItem/GoalListItem';
+// import GoalListItem from '../GoalListItem/GoalListItem';
 
-export default function GoalList({ lists }) {
-    const goalListItems = lists.map(l =>
-        <GoalListItem
-            list={l}
-            key={l._id}
-        />
-    );
+export default function GoalList() {
     return (
-        <main className="GoalList">
-            {goalListItems}
-    </main>
+        <p>list of goals</p>
     )
 }

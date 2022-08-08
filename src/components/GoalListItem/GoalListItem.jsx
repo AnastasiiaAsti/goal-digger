@@ -1,5 +1,5 @@
-export default function GoalListItem({ list }) {
+export default function GoalListItem() {
     return (
-        <div>OrderListItem</div>
+        <p>single goal item</p>
     )
 }
