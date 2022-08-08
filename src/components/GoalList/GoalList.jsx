@@ -1,9 +1,10 @@
 import GoalListItem from '../GoalListItem/GoalListItem';
 
-export default function GoalList() {
-    const goalListItems = orders.map(o =>
+export default function GoalList({list}) {
+    const goalListItems = list.map(l =>
         <GoalListItem
-            key={o._id}
+            list={l}
+            key={l._id}
         />
     );
     return (

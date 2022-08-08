@@ -4,7 +4,7 @@ export default function GoalListItem() {
     return (
         <div className="container">
                 <img src=""></img>
-                <spam>Name:</span>
+                <span>Name:</span>
                 <p>Links:</p>
         </div>
     );
