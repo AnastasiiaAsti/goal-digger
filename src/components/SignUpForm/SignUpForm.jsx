@@ -36,7 +36,7 @@ export default class SignUpForm extends Component {
     render() {
         const disable = this.state.password !== this.state.confirm;
         return (
-          <div className="container mt-5 mb-5 d-flex justify-content-center">
+          <div className="container m-5 d-flex justify-content-center">
             <Form
               className="form p-5 rounded"
               autoComplete="off"

@@ -30,7 +30,7 @@ export default function LoginForm({ setUser }) {
   }
 
   return (
-    <div className="container mt-5 mb-5 d-flex justify-content-center">
+    <div className="container m-5 d-flex justify-content-center">
       <Form
         className="form p-5 rounded"
         autoComplete="off"

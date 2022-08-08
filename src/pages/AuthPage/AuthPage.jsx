@@ -7,11 +7,15 @@ export default function AuthPage({ setUser }) {
     const [showLogin, setShowLogin] = useState(true);
     
     return (
-        <main className="AuthPage">
-      <div>
-        <h3 onClick={() => setShowLogin(!showLogin)}>{showLogin ? ' PRESS SIGN UP' : 'PRESS LOG IN'}</h3>
-      </div>
-      {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
-    </main>
+        <div className="container">
+          <div className="row d-flex justify-content-center align-items-center">
+                <div className="col-3">
+          <p className="btn btn-lg border" onClick={() => setShowLogin(!showLogin)}>{showLogin ? ' PRESS TO SIGN UP' : 'PRESS TO LOG IN'}</p>
+          </div>
+          <div className='col-6'>
+                {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
+          </div>
+          </div>
+        </div>
     )
 }
