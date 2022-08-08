@@ -1,4 +1,4 @@
-export default function GoalListItem() {
+export default function GoalListItem({ list }) {
     return (
         <div>OrderListItem</div>
     )

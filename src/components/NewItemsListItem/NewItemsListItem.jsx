@@ -1,5 +1,9 @@
-export default function NewItemsListItem() {
+export default function NewItemsListItem({newListItem}) {
     return (
-        <div className="NewItemsListItem">NewItemsListItem</div>
+        <div className="NewItemsListItem">
+            <div className="name">{newListItem.name}</div>
+            <div className="image">{newListItem.photoUrl}</div>
+            <div className="links">{ newListItem.links}</div>
+        </div>
     )
 }
