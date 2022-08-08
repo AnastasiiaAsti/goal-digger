@@ -30,8 +30,11 @@ export default function LoginForm({ setUser }) {
   }
 
   return (
-    <div className="container">
-      <Form autoComplete="off" onSubmit={handleSubmit}>
+    <div className="container mt-5 mb-5 d-flex justify-content-center">
+      <Form
+        className="form p-5"
+        autoComplete="off"
+        onSubmit={handleSubmit}>
         <h3>Log In</h3>
         <div className="mb-3">
             <label>Email</label>
@@ -56,7 +59,7 @@ export default function LoginForm({ setUser }) {
             required />
             <Button
               type="submit"
-              className="btn">LOG IN</Button>
+              className="m-5 btn btn-dark">LOG IN</Button>
           </div>
         <p className="error-message">&nbsp;{error}</p>
       </Form>

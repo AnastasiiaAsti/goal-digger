@@ -36,8 +36,11 @@ export default class SignUpForm extends Component {
     render() {
         const disable = this.state.password !== this.state.confirm;
         return (
-          <div className="container">
-            <Form autoComplete="off" onSubmit={this.handleSubmit}>
+          <div className="container mt-5 mb-5 d-flex justify-content-center">
+            <Form
+              className="form p-5"
+              autoComplete="off"
+              onSubmit={this.handleSubmit}>
               <h3>Sign Up</h3>
               <div className="mb-3">
                   <label>Name</label>
@@ -81,7 +84,7 @@ export default class SignUpForm extends Component {
                   value={this.state.confirm}
                   onChange={this.handleChange}
                   required />
-                  <Button className="btn " type="submit" disabled={disable}>SIGN UP</Button>
+                  <Button className="m-5 btn btn-dark" type="submit" disabled={disable}>SIGN UP</Button>
               </div>
               <p className="error-message">&nbsp;{this.state.error}</p>
             </Form>

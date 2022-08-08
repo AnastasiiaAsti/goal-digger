@@ -7,9 +7,8 @@
   --tan: #DDC09E;
   --background: #DECEDE;
   --teal:#638EA6;
-
-
 }
+
 
 body {
   margin: 0;
@@ -19,7 +18,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background);
-  padding: 2vmin;
   height: 100vh;
 }
 
@@ -30,8 +28,13 @@ code {
 
 #root {
   height: 100%;
+  background-color: var(--background);
 }
 
 .navigation {
+  background-color: var(--lili);
+}
+
+.form {
   background-color: var(--lili);
 }
