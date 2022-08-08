@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { getUser } from "../../utilities/users-service";
 import AuthPage from "../AuthPage/AuthPage";
 import NavBar from "../../components/NavBar/NavBar";
+import AddToListPage from "../AddToListPage/AddToListPage";
 import GoalListPage from '../GoalListPage/GoalListPage';
 
 export default function App() {
@@ -15,7 +16,8 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-          <Route path="/list" element={<GoalListPage user={user} setUser={setUser} />} />
+            <Route path="/lists" element={<GoalListPage user={user} setUser={setUser} />} />
+            <Route path="/lists/new" element={<AddToListPage />} />
           </Routes>
         </>
       ) : (
