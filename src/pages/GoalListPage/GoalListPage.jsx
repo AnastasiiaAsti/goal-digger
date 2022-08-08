@@ -19,7 +19,7 @@ export default function GoalListPage({ user, setUser }) {
 
     return (
         <main className='GoalListPage'>
-            <h1>GoalListPage</h1>
+            <h1 className="m-5">Goal List Page</h1>
             <aside>
                 <Link to="/lists/new" className="btn btn-lg">Go Dig New Goals!</Link>
             </aside>

@@ -1,6 +1,8 @@
 export default function AddToListPage({ user, setUser }) {
     
     return (
-        <h1>New Order Page</h1>
+        <section className="container-fluid">
+            <h1 className="m-5">New Order Page</h1>
+        </section>
     );
 }

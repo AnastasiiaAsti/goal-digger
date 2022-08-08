@@ -10,7 +10,7 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg fixed-top navigation">
+    <nav className="navbar navbar-expand-lg navigation">
       <div className="container">
         <span>Signed in as: {user.name}</span>
         <Link className="btn btn-lg" to="/lists">BUCKET LIST</Link>
