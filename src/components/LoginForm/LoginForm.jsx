@@ -32,7 +32,7 @@ export default function LoginForm({ setUser }) {
   return (
     <div className="container mt-5 mb-5 d-flex justify-content-center">
       <Form
-        className="form p-5"
+        className="form p-5 rounded"
         autoComplete="off"
         onSubmit={handleSubmit}>
         <h3>Log In</h3>

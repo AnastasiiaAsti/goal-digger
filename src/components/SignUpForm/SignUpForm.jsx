@@ -1,4 +1,4 @@
-import { Component, useState } from 'react'
+import { Component } from 'react'
 import { signUp } from '../../utilities/users-service'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -38,7 +38,7 @@ export default class SignUpForm extends Component {
         return (
           <div className="container mt-5 mb-5 d-flex justify-content-center">
             <Form
-              className="form p-5"
+              className="form p-5 rounded"
               autoComplete="off"
               onSubmit={this.handleSubmit}>
               <h3>Sign Up</h3>
