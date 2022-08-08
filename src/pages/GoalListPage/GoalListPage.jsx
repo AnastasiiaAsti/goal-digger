@@ -23,7 +23,9 @@ export default function GoalListPage({ user, setUser }) {
                 <Link to="/lists/new" className="btn btn-lg">Go Dig New Goals!</Link>
             </aside>
             <GoalList
-                lists={lists } />
+                lists={lists}
+                selectedList={selectedList}
+                setSelectedList={setSelectedList}/>
         </main>
     );
 }
