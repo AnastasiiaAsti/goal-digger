@@ -1,9 +1,12 @@
-import Map, {Marker} from 'react-map-gl';
+import Map, { Marker, Popup } from 'react-map-gl';
 import * as React from 'react';
+import userEvent from '@testing-library/user-event';
 
 
 
-export default function MapPage() {
+
+export default function MapPage({ user, setUser }) {
+    const [showPopup, setShowPopup] = React.useState(true);
     const [viewState, setViewState] = React.useState({
         latitude: 33.9799,
         longitude: -118.4370,
@@ -17,8 +20,28 @@ export default function MapPage() {
             mapStyle="mapbox://styles/mapbox/streets-v9"
             mapboxAccessToken={process.env.REACT_APP_MAP}
         >
-            <Marker longitude={-118.4370} latitude={33.9799} color="var(--peach)">
-    </Marker>  
+            <Marker
+                longitude={-118.4370}
+                latitude={33.9799}
+                color="var(--peach)">
+            </Marker>  
+            {showPopup && (
+                <Popup longitude={-118.4370}
+                    latitude={33.9799}
+                    closeButton={true}
+                    closeOnClick={false}
+                    anchor="left"
+                    onClose={() => setShowPopup(false)}>
+                    <div className="card text-center">
+                        <div className='card-header'>Place</div>
+                        <div className='card-body'>
+                            <span>Rating</span>
+                            <p className='card-text'>Review</p>
+                        </div>
+                        <div className='card-footer text-muted'>created by {user.name}
+                        </div>
+                    </div>
+                </Popup>)}
     </Map>
     )
 }
