@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const mongoose = require('mongoose');
 
 require('dotenv').config()
 require('./config/database')
@@ -19,11 +20,10 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(require('./config/checkToken'))
 
 // Put API routes here, before the "catch all" route
-app.use('/api/users', require('./routes/api/users'))
-
-
+app.use('/api/users', require('./routes/api/users'));
 app.use('/api/items', require('./routes/api/items'));
 app.use('/api/lists', require('./routes/api/lists'));
+app.use('/api/pins', require('./routes/api/pins'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
