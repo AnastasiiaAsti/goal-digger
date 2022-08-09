@@ -1,4 +1,5 @@
 import "./App.css";
+import 'mapbox-gl/dist/mapbox-gl.css';
 import { useState } from "react";
 import * as React from 'react';
 import { Routes, Route } from "react-router-dom";
@@ -9,13 +10,9 @@ import AddToListPage from "../AddToListPage/AddToListPage";
 import GoalListPage from '../GoalListPage/GoalListPage';
 import MapPage from '../MapPage/MapPage';
 
+
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [viewState, setViewState] = React.useState({
-    latitude: 37.8,
-    longitude: -122.4,
-    zoom: 14
-  });
 
   return (
     <main className="App">
