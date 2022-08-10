@@ -27,9 +27,9 @@ export default function MapPage({ user, setUser }) {
     return (
         <Map
             {...viewState}
+            mapStyle="mapbox://styles/asticodes/cl6mnzcr8004s15pcf6fotw2b"
             onMove={evt => setViewState(evt.viewState)}
             style={{ width: "100vw", height: "100vh" }}
-            mapStyle="mapbox://styles/mapbox/streets-v9"
             mapboxAccessToken={process.env.REACT_APP_MAP}
             onDblClick={showPopup}
         >
@@ -43,7 +43,7 @@ export default function MapPage({ user, setUser }) {
                             setShowPopup({
                                 [pin._id]: true,
                             })}
-                        color="var(--peach)">
+                        color="var(--pin)">
                     </Marker>  
                     {showPopup[pin._id] ? (
                         <Popup
