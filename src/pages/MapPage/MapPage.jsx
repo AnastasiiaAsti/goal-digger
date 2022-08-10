@@ -8,6 +8,9 @@ export default function MapPage({ user, setUser }) {
     const [showPopup, setShowPopup] = useState([]);
     const [pins, setPins] = useState([]);
     const [addPin, setAddPin] = useState(null);
+    const [addtitle, setAddTitle] = useState(null);
+    const [addRating, setAddRating] = useState(0);
+    const [addDetail, setAddDetail] = useState(null);
 
     const [viewState, setViewState] = useState({
         latitude: 33.9799,
@@ -30,6 +33,20 @@ export default function MapPage({ user, setUser }) {
         setAddPin({lng, lat});
     };
 
+    const handleSubmit = async (evt) => {
+        evt.preventDefault();
+        const newPin = {
+            user: currentUser,
+            title: addtitle,
+            detail: addDetail,
+            rating: addRating,
+            lat: addPin.lat,
+            lng: addPin.lng
+        };
+        const updatePins = await pinsAPI.addPin(pins);
+        setPins(updatePins)
+    }
+        
 
     return (
         <Map
@@ -44,7 +61,7 @@ export default function MapPage({ user, setUser }) {
                 <>
                     <Marker
                         key={pin._id}
-                        longitude={pin.long}
+                        longitude={pin.lng}
                         latitude={pin.lat}
                         style={{cursor:"pointer", color: pin.username === currentUser ? "var(--pin)" : "var(--light-blue)"}}
                         onClick={() =>
@@ -81,20 +98,22 @@ export default function MapPage({ user, setUser }) {
                     closeOnClick={false}
                     anchor="left"
                     onClose={() => setAddPin(null)}>
-                    <p>pin</p>
+                    <div className="card">
+                        <form onSubmit={handleSubmit} className="form-group p-3">
+                            <input className="form-control" type="text" name="title" placeholder='name of the place' onChange={(evt)=>setAddTitle(evt.target.value)} />
+                            <div className="btn-group" role="group" name="rating" onChange={(evt)=>setAddRating(evt.target.value)}>
+                                <button type="button" className="btn btn-outline-secondary">1</button>
+                                <button type="button" className="btn btn-outline-secondary">2</button>
+                                <button type="button" className="btn btn-outline-secondary">3</button>
+                                <button type="button" className="btn btn-outline-secondary">4</button>
+                                <button type="button" className="btn btn-outline-secondary">5</button>
+                            </div>
+                            <input className='form-control' type="text" placeholder='add your notes' name="detail" onChange={(evt)=>setAddDetail(evt.target.value)} />
+                            <button className="btn border" type="submit">ADD</button>
+                        </form>
+                    </div>
                 </Popup>
             ) : null}
     </Map>
     )
 }
-
-
-  {/* <div className="card text-center">
-                                <div className='card-header'>{pin.title}</div>
-                                <div className='card-body'>
-                                    <span>Rating: {pin.rating}</span>
-                                    <p className='card-text'>"{pin.detail}"</p>
-                                </div>
-                                <div className='card-footer text-muted'>created by {pin.user}
-                                </div>
-                            </div> */}
