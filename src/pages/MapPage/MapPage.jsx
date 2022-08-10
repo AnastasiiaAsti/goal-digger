@@ -54,10 +54,10 @@ export default function MapPage({ user, setUser }) {
                             anchor="left"
                             onClose={() => setShowPopup({})}>
                             <div className="card text-center">
-                                <div className='card-header'>Place</div>
+                                <div className='card-header'>{pin.title}</div>
                                 <div className='card-body'>
-                                    <span>Rating</span>
-                                    <p className='card-text'>Review</p>
+                                    <span>Rating: {pin.rating}</span>
+                                    <p className='card-text'>"{pin.detail}"</p>
                                 </div>
                                 <div className='card-footer text-muted'>created by {user.name}
                                 </div>
