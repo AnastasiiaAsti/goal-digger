@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as listsAPI from '../../utilities/lists-api';
 import GoalList from '../../components/GoalList/GoalList';
+import Header from "../../components/Header/Header";
+import AddGoal from "../../components/AddGoal/AddGoal";
 
 
 export default function GoalListPage({ user, setUser }) {
@@ -22,13 +24,14 @@ export default function GoalListPage({ user, setUser }) {
 
         <div className="container">
             <div className="row">
-                <div className="col-12 d-flex justify-content-between mt-5">
-                    <div className="sec2 col-3 rounded"><Link to="/lists/new" className="btn btn-lg ">Go Dig New Goals!</Link></div>
+                <div className="col-12 d-flex justify-content-between align-items-center mt-5">
+                    <div className="sec2 col-3 rounded">
+                        <Link to="/lists/new" className="btn btn-lg border">Go Dig New Goals!</Link>
+                        <AddGoal />
+                    </div>
                     <div className="sec1 col-8 rounded">
-                        <GoalList
-                            lists={lists}
-                            selectedList={selectedList}
-                            setSelectedList={setSelectedList} /></div>
+                        <Header/>
+                    </div>
                 </div>
             </div>
         </div>
