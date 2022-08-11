@@ -30,7 +30,8 @@ export default function GoalListPage({ user, setUser }) {
                         <AddGoal />
                     </div>
                     <div className="sec1 col-8 rounded">
-                        <Header/>
+                        <Header />
+                        <GoalList/>
                     </div>
                 </div>
             </div>
