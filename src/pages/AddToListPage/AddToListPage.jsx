@@ -4,7 +4,7 @@ export default function AddToListPage({ user, setUser }) {
         <div className="container">
             <div className="row">
                 <div className="col-12 d-flex justify-content-between mt-5">
-                    <div className="sec3 col-2 rounded">
+                    <div className="sec3 col-4 rounded">
                         <p>Categories</p>
                         <ul>
                             <li>Travel</li>
@@ -15,9 +15,6 @@ export default function AddToListPage({ user, setUser }) {
                     </div>
                     <div className="sec1 col-7 rounded">
                         <p>List of items</p>
-                    </div>
-                    <div className="sec2 col-2 rounded">
-                        <p>Items you will add to the list</p>
                     </div>
                     
                 </div>
