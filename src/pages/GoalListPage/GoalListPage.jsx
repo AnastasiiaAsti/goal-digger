@@ -33,7 +33,7 @@ export default function GoalListPage({ user, setUser, goals }) {
           <div className="sec2 col-3 rounded">
             <NewGoalForm addGoal={addGoal} />
           </div>
-          <div className="sec1 col-8 rounded">
+          <div className="overflow-scroll sec1 col-8 rounded">
             <Header />
             {goal.map((item) => {
               return (
