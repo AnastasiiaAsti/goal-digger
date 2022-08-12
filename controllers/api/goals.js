@@ -2,7 +2,8 @@ const Goal = require('../../models/goal')
 
 module.exports = {
   index,
-  create
+  create,
+  delete: deleteGoal,
 };
 
 async function index(req, res) {
@@ -18,4 +19,9 @@ async function create(req, res) {
   console.log(req.body)
   const newGoal = await Goal.create(req.body);
   return res.json(newGoal)
+}
+
+async function deleteGoal(req, res) {
+  const deleteGoal = await Goal.findByIdAndRemove(req.params.id)
+  return res.json(deleteGoal)
 }

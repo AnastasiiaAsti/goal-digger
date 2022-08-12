@@ -8,3 +8,7 @@ export function getAllGoals() {
 export function addGoal(goalForm) {
     return sendRequest(`${BASE_URL}/create`, 'POST', goalForm);
 }
+
+export function deleteGoal(goal) {
+    return sendRequest(`${BASE_URL}/delete/${goal}`, 'DELETE')
+}
