@@ -8,11 +8,3 @@ export function getAllGoals() {
 export function addGoal(goalForm) {
     return sendRequest(`${BASE_URL}/create`, 'POST', goalForm);
 }
-
-// export function deleteGoal () {
-//     return sendRequest(`${BASE_URL}/delete/${}`, 'DELETE');
-// }
-
-// export function updateGoal (house, updateGoalData) {
-//     return sendRequest(`${BASE_URL}/${list}`, 'PUT', updategoalData)
-// }

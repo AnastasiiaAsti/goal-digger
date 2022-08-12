@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import * as goalsAPI from "../../utilities/goals-api";
 
 export default function GoalListPage({ user, setUser, goals }) {
-  const [goal, setGoal] = useState(null);
+  const [goal, setGoal] = useState([""]);
 
   useEffect(function () {
     async function getGoal() {
@@ -29,31 +29,18 @@ export default function GoalListPage({ user, setUser, goals }) {
           </div>
           <div className="sec1 col-8 rounded">
             <Header />
-            <div>
-              <div className="d-flex justify-content-between m-4 border-bottom">
-                <button className="btn">x</button>
-                <h3 className="text-center bg-transparent"></h3>
-                <input type="checkbox" className="m-3" />
-              </div>
-
-              <p>no goals yet</p>
-            </div>
+            {goal.map((item) => {
+              return (
+                <div className="d-flex justify-content-between m-4 border-bottom">
+                  <button className="btn">x</button>
+                  <h3 className="text-center bg-transparent">{item.name}</h3>
+                  <input type="checkbox" className="m-3" />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
     </div>
   );
-}
-
-{
-  /* {goal.map((goal, index) => (
-                  <div
-                    key={index}
-                    className="d-flex justify-content-between m-4 border-bottom"
-                  >
-                    <button className="btn">x</button>
-                    <h3 className="text-center bg-transparent">{goal.name}</h3>
-                    <input type="checkbox" className="m-3" />
-                  </div>
-                ))} */
 }
