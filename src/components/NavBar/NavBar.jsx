@@ -15,7 +15,6 @@ export default function NavBar({ user, setUser }) {
         <span>Signed in as: {user.name}</span>
         <Link className="btn btn-lg" to="/">MAP</Link>
         <Link className="btn btn-lg" to="/lists">BUCKET LIST</Link>
-        <Link className="btn btn-lg" to="/lists/new">ADD TO YOUR LIST</Link>
         <Link className="btn btn-lg" to="" onClick={handleLogOut}>LOG OUT</Link>
       </div>
     </nav>
