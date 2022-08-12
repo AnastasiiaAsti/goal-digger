@@ -8,16 +8,22 @@ export default function GoalListPage({ user, setUser, goals }) {
 
   useEffect(function () {
     async function getGoal() {
-      let list = await goalsAPI.getAllGoals();
-      console.log(list);
+      const list = await goalsAPI.getAllGoals();
       setGoal(list);
     }
     getGoal();
   }, []);
 
-  function addGoal(newGoal) {
-    goalsAPI.addGoal(newGoal);
-    setGoal([...goal, newGoal]);
+  async function addGoal(newGoal) {
+    const goalResponse = await goalsAPI.addGoal(newGoal);
+    setGoal([...goal, goalResponse]);
+  }
+
+  async function deleteGoal(delGoal) {
+    await goalsAPI.deleteGoal(delGoal._id);
+    const goalCopy = [...goal];
+    const newGoals = goalCopy.filter((g) => g._id !== delGoal._id);
+    setGoal(newGoals);
   }
 
   return (
@@ -32,7 +38,9 @@ export default function GoalListPage({ user, setUser, goals }) {
             {goal.map((item) => {
               return (
                 <div className="d-flex justify-content-between m-4 border-bottom">
-                  <button className="btn">x</button>
+                  <button onClick={() => deleteGoal(item)} className="btn">
+                    x
+                  </button>
                   <h3 className="text-center bg-transparent">{item.name}</h3>
                   <input type="checkbox" className="m-3" />
                 </div>

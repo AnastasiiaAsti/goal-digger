@@ -22,6 +22,7 @@ async function create(req, res) {
 }
 
 async function deleteGoal(req, res) {
+  console.log(req.params.id)
   const deleteGoal = await Goal.findByIdAndRemove(req.params.id)
   return res.json(deleteGoal)
 }
