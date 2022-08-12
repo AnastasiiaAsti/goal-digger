@@ -86,7 +86,7 @@ export default function MapPage({ user, setUser }) {
                   <p className="card-text">"{pin.detail}"</p>
                 </div>
                 <div className="card-footer text-muted">
-                  created by {pin.user}
+                  created by {user.name}
                 </div>
               </div>
             </Popup>
