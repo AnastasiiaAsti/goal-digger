@@ -52,3 +52,7 @@ code {
 .sec3 {
   background-color: var(--teal);
 }
+
+.strike {
+  text-decoration: line-through;
+}

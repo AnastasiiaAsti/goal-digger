@@ -3,7 +3,8 @@ const Schema = mongoose.Schema
 
 const pinSchema = new Schema({
     user: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     },
     title: {
@@ -24,7 +25,7 @@ const pinSchema = new Schema({
         type: Number,
         require: true,
     },
-    long: {
+    lng: {
         type: Number,
         require: true,
     }
