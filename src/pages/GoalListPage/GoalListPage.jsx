@@ -1,4 +1,5 @@
 import NewGoalForm from "../../components/NewGoalForm/NewGoalForm";
+import React, { Fragment } from "react";
 import { useState, useEffect } from "react";
 import * as goalsAPI from "../../utilities/goals-api";
 import Col from "react-bootstrap/Col";
@@ -10,6 +11,7 @@ import Image from "react-bootstrap/Image";
 
 export default function GoalListPage({ user, setUser, goals }) {
   const [goal, setGoal] = useState([""]);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(function () {
     async function getGoal() {
@@ -31,6 +33,14 @@ export default function GoalListPage({ user, setUser, goals }) {
     setGoal(newGoals);
   }
 
+  const handleClick = (event) => {
+    if (event.target.style.textDecoration) {
+      event.target.style.removeProperty("text-decoration");
+    } else {
+      event.target.style.setProperty("text-decoration", "line-through");
+    }
+  };
+
   return (
     <Container className="">
       <Row className="">
@@ -40,15 +50,16 @@ export default function GoalListPage({ user, setUser, goals }) {
           sm={12}
           className="overflow-scroll sec1 rounded mt-5 p-3"
         >
-          {goal.map((item) => {
+          {goal.map((item, key) => {
             return (
               <div className="d-flex justify-content-between">
                 <CloseButton
                   onClick={() => deleteGoal(item)}
                   className="btn"
                 ></CloseButton>
-                <h3 className="text-center bg-transparent">{item.name}</h3>
-                <input type="checkbox" className="m-3" />
+                <h3 onClick={handleClick} key={key}>
+                  {item.name}
+                </h3>
               </div>
             );
           })}
