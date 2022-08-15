@@ -31,6 +31,7 @@ export default function NewGoalForm({ addGoal }) {
         placeholder="add your goal"
         className="form-control rounded mt-5"
         onChange={handleChange}
+        required
       ></input>
       <button
         className="btn form-control rounded border-dark mt-4"
