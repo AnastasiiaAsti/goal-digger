@@ -80,10 +80,10 @@ export default function MapPage({ user, setUser }) {
               onClose={() => setShowPopup({})}
             >
               <div className="card text-center">
-                <div className="card-header">{pin.title}</div>
+                <div className="card-header display-6">{pin.title}</div>
                 <div className="card-body">
                   <span>Rating: {pin.rating}</span>
-                  <p className="card-text">"{pin.detail}"</p>
+                  <h4 className="card-text">"{pin.detail}"</h4>
                 </div>
                 <div className="card-footer text-muted">
                   created by {user.name}
@@ -112,7 +112,7 @@ export default function MapPage({ user, setUser }) {
                 onChange={(evt) => setAddTitle(evt.target.value)}
               />
               <div
-                className="btn-group"
+                className="btn-group mt-2"
                 role="group"
                 name="rating"
                 onChange={(evt) => setAddRating(evt.target.value)}
@@ -134,13 +134,13 @@ export default function MapPage({ user, setUser }) {
                 </button>
               </div>
               <input
-                className="form-control"
+                className="form-control mt-2"
                 type="text"
                 placeholder="add your notes"
                 name="detail"
                 onChange={(evt) => setAddDetail(evt.target.value)}
               />
-              <button className="btn border" type="submit">
+              <button className="btn border mt-4" type="submit">
                 ADD
               </button>
             </form>
