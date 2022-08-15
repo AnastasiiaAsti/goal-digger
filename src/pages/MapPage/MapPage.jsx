@@ -49,7 +49,7 @@ export default function MapPage({ user, setUser }) {
   return (
     <Map
       {...viewState}
-      onClick={handleAddPin}
+      onDblClick={handleAddPin}
       mapStyle="mapbox://styles/asticodes/cl6mnzcr8004s15pcf6fotw2b"
       onMove={(evt) => setViewState(evt.viewState)}
       style={{ width: "100vw", height: "100vh" }}
