@@ -2,6 +2,10 @@ import Map, { Marker, Popup } from "react-map-gl";
 import * as React from "react";
 import { useState, useEffect } from "react";
 import * as pinsAPI from "../../utilities/pins-api";
+import "mapbox-gl/dist/mapbox-gl.css";
+
+const REACT_APP_MAPBOX_ACCESS_TOKEN =
+  "pk.eyJ1IjoiYXN0aWNvZGVzIiwiYSI6ImNsNm1pZmk2bDA0NmYzam5pdHo1b3JxcHQifQ.ovoBIu_J3qF9sY2pec4JJg";
 
 export default function MapPage({ user, setUser }) {
   const [showPopup, setShowPopup] = useState([]);
@@ -53,7 +57,7 @@ export default function MapPage({ user, setUser }) {
       mapStyle="mapbox://styles/asticodes/cl6mnzcr8004s15pcf6fotw2b"
       onMove={(evt) => setViewState(evt.viewState)}
       style={{ width: "100vw", height: "100vh" }}
-      mapboxAccessToken={process.env.REACT_APP_MAP}
+      mapboxAccessToken={REACT_APP_MAPBOX_ACCESS_TOKEN}
     >
       {pins.map((pin) => (
         <>
