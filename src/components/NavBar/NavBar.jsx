@@ -14,7 +14,9 @@ export default function NavBar({ user, setUser }) {
   return (
     <Navbar className="navigation" expand="lg">
       <Container fluid>
-        <Navbar.Brand className="m-4">GOAL-DIGGER</Navbar.Brand>
+        <Navbar.Brand className="m-4">
+          <span className="font-weight-bold">GOAL-DIGGER</span>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

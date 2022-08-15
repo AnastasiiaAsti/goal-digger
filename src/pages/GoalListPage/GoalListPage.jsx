@@ -1,5 +1,4 @@
 import NewGoalForm from "../../components/NewGoalForm/NewGoalForm";
-import React, { Fragment } from "react";
 import { useState, useEffect } from "react";
 import * as goalsAPI from "../../utilities/goals-api";
 import Col from "react-bootstrap/Col";
@@ -11,7 +10,6 @@ import Image from "react-bootstrap/Image";
 
 export default function GoalListPage({ user, setUser, goals }) {
   const [goal, setGoal] = useState([""]);
-  const [isActive, setIsActive] = useState(false);
 
   useEffect(function () {
     async function getGoal() {

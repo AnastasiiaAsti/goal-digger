@@ -1,43 +1,45 @@
-import { useState } from 'react';
-import * as usersService from '../../utilities/users-service';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import { useState } from "react";
+import * as usersService from "../../utilities/users-service";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
 
 export default function LoginForm({ setUser }) {
   const [credentials, setCredentials] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   function handleChange(evt) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
-    setError('');
+    setError("");
   }
 
   async function handleSubmit(evt) {
     // Prevent form from being submitted to the server
     evt.preventDefault();
     try {
-      // The promise returned by the signUp service method 
+      // The promise returned by the signUp service method
       // will resolve to the user object included in the
       // payload of the JSON Web Token (JWT)
       const user = await usersService.login(credentials);
       setUser(user);
     } catch {
-      setError('Log In Failed - Try Again');
+      setError("Log In Failed - Try Again");
     }
   }
 
   return (
-    <div className="container m-5 d-flex justify-content-center">
+    <Container fluid className=" m-5 d-flex justify-content-center">
       <Form
         className="form p-5 rounded"
         autoComplete="off"
-        onSubmit={handleSubmit}>
+        onSubmit={handleSubmit}
+      >
         <h3>Log In</h3>
         <div className="mb-3">
-            <label>Email</label>
+          <label>Email</label>
           <input
             type="text"
             name="email"
@@ -45,10 +47,11 @@ export default function LoginForm({ setUser }) {
             placeholder="Enter email"
             value={credentials.email}
             onChange={handleChange}
-            required />
-          </div>
+            required
+          />
+        </div>
         <div className="mb-3">
-            <label>Password</label>
+          <label>Password</label>
           <input
             type="password"
             name="password"
@@ -56,13 +59,17 @@ export default function LoginForm({ setUser }) {
             placeholder="Enter password"
             value={credentials.password}
             onChange={handleChange}
-            required />
-            <Button
-              type="submit"
-              className="m-5 btn btn-dark">LOG IN</Button>
-          </div>
+            required
+          />
+          <Button
+            type="submit"
+            className="btn form-control rounded bg-transparent border-dark mt-5"
+          >
+            LOG IN
+          </Button>
+        </div>
         <p className="error-message">&nbsp;{error}</p>
       </Form>
-    </div>
+    </Container>
   );
 }

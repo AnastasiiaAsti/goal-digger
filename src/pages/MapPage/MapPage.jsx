@@ -63,6 +63,7 @@ export default function MapPage({ user, setUser }) {
             latitude={pin.lat}
             style={{
               cursor: "pointer",
+              color: "black",
             }}
             onClick={() =>
               setShowPopup({
@@ -84,9 +85,6 @@ export default function MapPage({ user, setUser }) {
                 <div className="card-body">
                   <span>Rating: {pin.rating}</span>
                   <h4 className="card-text">"{pin.detail}"</h4>
-                </div>
-                <div className="card-footer text-muted">
-                  created by {user.name}
                 </div>
               </div>
             </Popup>

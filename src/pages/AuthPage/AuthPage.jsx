@@ -7,10 +7,10 @@ export default function AuthPage({ setUser }) {
 
   return (
     <div className="container">
-      <div className="row d-flex justify-content-center align-items-center">
+      <div className="row d-flex align-items-center">
         <div className="col-12 m-5">
           <p
-            className="btn btn-lg border p-4"
+            className="btn btn-lg border-dark p-4"
             onClick={() => setShowLogin(!showLogin)}
           >
             {showLogin ? " PRESS TO SIGN UP" : "PRESS TO LOG IN"}
