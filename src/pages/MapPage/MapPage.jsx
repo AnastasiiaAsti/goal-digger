@@ -1,4 +1,5 @@
 import Map, { Marker, Popup } from "react-map-gl";
+import mapboxgl from "mapbox-gl";
 import * as React from "react";
 import { useState, useEffect } from "react";
 import * as pinsAPI from "../../utilities/pins-api";
