@@ -43,7 +43,7 @@ export default function GoalListPage({ user, setUser, goals }) {
     <Container className="">
       <Row className="">
         <Col
-          lg={9}
+          lg={8}
           md={12}
           sm={12}
           className="overflow-scroll sec1 rounded mt-5 p-3"
@@ -62,7 +62,7 @@ export default function GoalListPage({ user, setUser, goals }) {
             );
           })}
         </Col>
-        <Col lg={3} md={12} sm={12} className="sec2 rounded mt-5">
+        <Col lg={4} md={12} sm={12} className="sec2 rounded mt-5">
           <NewGoalForm className="mt-5" addGoal={addGoal} />
           <Image className="img-fluid p-3 rounded" src={Img} />
         </Col>
