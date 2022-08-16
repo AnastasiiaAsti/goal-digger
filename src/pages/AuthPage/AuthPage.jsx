@@ -1,29 +1,32 @@
 import { useState } from "react";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import LoginForm from "../../components/LoginForm/LoginForm";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 export default function AuthPage({ setUser }) {
   const [showLogin, setShowLogin] = useState(true);
 
   return (
-    <div className="container">
-      <div className="row d-flex align-items-center">
-        <div className="col-12 m-5">
+    <Container fluid className="container">
+      <Row className="flex-column align-items-center">
+        <Col lg={6} sm={10}>
           <p
-            className="btn btn-lg border-dark p-4"
+            className="btn btn-lg border-dark p-4 m-5"
             onClick={() => setShowLogin(!showLogin)}
           >
             {showLogin ? " PRESS TO SIGN UP" : "PRESS TO LOG IN"}
           </p>
-        </div>
-        <div className="col-12">
+        </Col>
+        <Col lg={6} sm={10}>
           {showLogin ? (
             <LoginForm setUser={setUser} />
           ) : (
             <SignUpForm setUser={setUser} />
           )}
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }
