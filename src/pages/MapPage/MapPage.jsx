@@ -64,9 +64,9 @@ export default function MapPage({ user, setUser }) {
             key={pin._id}
             longitude={pin.lng}
             latitude={pin.lat}
+            color="black"
             style={{
               cursor: "pointer",
-              color: "black",
             }}
             onClick={() =>
               setShowPopup({
@@ -103,7 +103,7 @@ export default function MapPage({ user, setUser }) {
           anchor="left"
           onClose={() => setAddPin(null)}
         >
-          <div className="card">
+          <div className="popup-add">
             <form onSubmit={handleSubmit} className="form-group p-3">
               <input
                 className="form-control"
@@ -113,35 +113,41 @@ export default function MapPage({ user, setUser }) {
                 onChange={(evt) => setAddTitle(evt.target.value)}
               />
               <div
-                className="btn-group mt-2"
+                className="btn-group mt-4"
                 role="group"
                 name="rating"
                 onChange={(evt) => setAddRating(evt.target.value)}
               >
-                <button type="button" className="btn btn-outline-secondary">
+                <button
+                  type="button bg-light"
+                  className="btn btn-outline-light"
+                >
                   1
                 </button>
-                <button type="button" className="btn btn-outline-secondary">
+                <button type="button" className="btn btn-outline-light">
                   2
                 </button>
-                <button type="button" className="btn btn-outline-secondary">
+                <button type="button" className="btn btn-outline-light">
                   3
                 </button>
-                <button type="button" className="btn btn-outline-secondary">
+                <button type="button" className="btn btn-outline-light">
                   4
                 </button>
-                <button type="button" className="btn btn-outline-secondary">
+                <button type="button" className="btn btn-outline-light">
                   5
                 </button>
               </div>
               <input
-                className="form-control mt-2"
+                className="form-control mt-4"
                 type="text"
                 placeholder="add your notes"
                 name="detail"
                 onChange={(evt) => setAddDetail(evt.target.value)}
               />
-              <button className="btn border mt-4" type="submit">
+              <button
+                className="btn border mt-4 form-control bg-light"
+                type="submit"
+              >
                 ADD
               </button>
             </form>

@@ -28,7 +28,7 @@ export default function NewGoalForm({ addGoal }) {
         type="text"
         name="name"
         value={goalForm.name}
-        placeholder="add your goal"
+        placeholder="add your goal here"
         className="form-control rounded mt-5"
         onChange={handleChange}
         required

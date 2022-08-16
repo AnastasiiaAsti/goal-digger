@@ -61,3 +61,7 @@ code {
 .sec3 {
   background-color: var(--teal);
 }
+
+.popup-add {
+  background-color: var(--background);
+}
