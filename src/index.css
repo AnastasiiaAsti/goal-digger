@@ -51,11 +51,12 @@ code {
 
 .sec1 {
   background-color: var(--light-blue);
-  height: 80vh;
+  min-height: 80vh;
 }
 
 .sec2 {
   background-color: var(--peach);
+  min-height: 80vh;
 }
 
 .sec3 {
