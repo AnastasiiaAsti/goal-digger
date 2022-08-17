@@ -8,11 +8,12 @@ Link: https://goal-digger-app.herokuapp.com/
 
 # Technology Used
 
+MAPBOX API (https://docs.mapbox.com/#maps)<br>
 MONGO DB<br>
 EXPRESS<br>
 REACT<br>
 NODE.js<br>
-Botstrap<br>
+Bootstrap<br>
 
 # Screenshots
 
