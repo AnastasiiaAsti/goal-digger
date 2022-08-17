@@ -29,6 +29,19 @@ https://trello.com/b/VHgrfIjO/goal-digger-app
 
 <img width="760" alt="screen_shot_2022-08-01_at_3 07 27_pm" src="https://user-images.githubusercontent.com/97631462/183489756-1d6e30a9-d852-4f4d-a57b-d1f54d6a798d.png">
 
+# figma
+
+<img width="714" alt="Screen Shot 2022-08-08 at 2 52 29 PM" src="https://user-images.githubusercontent.com/97631462/185192207-6b0d1250-44e7-4749-b0da-dc4c33dcf6d4.png">
+
+
+<img width="714" alt="Screen Shot 2022-08-08 at 2 52 25 PM" src="https://user-images.githubusercontent.com/97631462/185192221-34c47354-de24-4e9a-811c-dc5063bfb820.png">
+
+
+
+
+
+
+
 #ICEBOX
 
 Allow users to see other user's lists<br>
